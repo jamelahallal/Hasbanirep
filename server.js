@@ -10,7 +10,13 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://hasbani.netlify.app",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.use("/auth", authRoutes);
