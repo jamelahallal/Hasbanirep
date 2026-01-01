@@ -12,8 +12,9 @@ const Products = () => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/products/${lang.toLowerCase()}`
+          `https://hasbaniwebproject-production.up.railway.app/products/${lang.toLowerCase()}`
         );
+
         setProducts(res.data);
       } catch (err) {
         console.log(err);

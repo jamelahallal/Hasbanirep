@@ -26,7 +26,7 @@ const AdminProducts = ({ lang = "EN" }) => {
       }
 
       const res = await axios.get(
-        `http://localhost:5000/products/${lang.toLowerCase()}`,
+        `https://hasbaniwebproject-production.up.railway.app/products/${lang.toLowerCase()}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -48,9 +48,10 @@ const AdminProducts = ({ lang = "EN" }) => {
   const fetchCategories = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/products/categories/${lang.toLowerCase()}`,
+        `https://hasbaniwebproject-production.up.railway.app/products/categories/${lang.toLowerCase()}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
+
       setCategories(res.data);
     } catch (err) {
       console.error("Fetch Categories Error:", err.response || err);
